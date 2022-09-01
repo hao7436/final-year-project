@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+{%load static%}
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ANTI-SCAM CENTER</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<style>
+				#banner{
+					position: relative;
+					background-image: url("{% static 'images/banner.jpg' %}");
+					background-position:  center center;
+					background-repeat: no-repeat;
+					background-size: cover;
+					z-index: 1;
+					padding: 11em 0;
+				
+				}
+			
+		</style>
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+		
+
+			<!-- Nav -->
+			{% include 'antiScam/element/nav.html' %}
+                  
+			<!-- Banner -->
+				
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+								<section class="box features">
+									<h2 class="major"><span> INTERNET LOVE</span></h2>
+									
+										<div class="row">
+											<section style="text-align:center ;">
+												<span class="image featured "><img src="{% static 'images/catfish2.png' %}"  /></span>
+												<p >
+													You are befriended by an attractive person (usually foreign) online and after gaining your trust, they 
+													ask you for money as proof of love. He/She will tell a tale about falling into trouble or hard times and ask for 
+													a loan from you. Once the money is transferred, the scammer disappears.
+													In some cases, your online friend may ask you to invest in a company or cryptocurrencies.
+													He/she may also request that you help them receive or transfer funds on their behalf using your bank account.
+													<br> <br>
+													Posing as attractive potential partners, scammers usually target vulnerable victims on dating and social media platforms, often using stolen photos on their profiles.
+													After befriending the victims and gaining their trust, the scammers spin a tale about falling on hard times and ask for money.
+													They may also demand gifts or money as proof of the victim's love, or claim they need the money to arrange a visit to the victim's country.
+													Another common ruse is for scammers to invite their smitten victims to buy into fake investment schemes or business ventures.
+												</p>
+												
+												<button onclick="myFunction()">HOW to stay safe</button>
+												<div id="SafeInfo" style="display: none;">
+													<h3>Don't send money</h3>
+													<p>If you have not met the person, do not send any money to him or her.</p>
+													<h3>Verify</h3>
+													<p>Verify the identity of the person you are talking to with an online image search on, https://images.google.com</p>
+													<h3>Video call</h3>
+													<p>Insist on a LIVE video call with the person you're talking to.</p>
+													<h3>Ask. Check. Confirm" before you invest</h3>
+													<p>All investments carry risks. Be wary of opportunities that promise high returns and low risk. Always ask, check and confirm before you invest.</p>
+													<h3>Don't allow others to use your  bank account</h3>
+													<p>Never allow others to use your bank account to conduct their transactions. You may be committing a crime by laundering money for criminals. 
+													   Money laundering is a serious offence. Offenders may be fined up to $500,000 and imprisoned for 10 years. You should note that you are responsible 
+													   for all the transactions carried out on your account.</p>
+												</div>
+											</section>	
+											
+											
+						
+											<div class="col-12">
+												<ul class="actions">
+													<li><a href="/scamType" class="button large">back to view all</a></li>
+												</ul>
+											</div>
+										</div>
+									
+								</section>
+						
+							</div>
+						</div>
+					</div>
+				</section>
+
+				{% include 'antiScam/element/footer.html' %}
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function myFunction() {
+				  var x = document.getElementById("SafeInfo");
+				  if (x.style.display === "none") {
+					x.style.display = "block";
+				  } else {
+					x.style.display = "none";
+				  }
+				}
+				</script>
+
+	</body>
+</html>

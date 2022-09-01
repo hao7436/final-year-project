@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+{%load static%}
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>ANTI-SCAM CENTER</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+		
+
+			<!-- Nav -->
+			{% include 'antiScam/element/nav.html' %}
+                  
+			<!-- Banner -->
+				
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+								<section class="box features">
+									<h2 class="major"><span>MEDIA NEWS</span></h2>
+									
+										<div class="row">
+											
+												<div class="col-3 col-6-medium col-12-small">
+												<a  target="_blank" href="https://www.straitstimes.com/singapore/at-least-277-people-lost-over-30m-to-china-officials-impersonation-scams-since-january">
+													<!-- Feature -->
+														<section class="box feature">
+															<div class="image featured"><img src="{% static 'images/straitstimes.jpg' %}" ></div>
+															<h3>At least 277 people lost over $30m to China officials impersonation scams since January</h3>
+															
+														</section>
+													</a>
+												</div>
+											
+												<div class="col-3 col-6-medium col-12-small">
+													<a  target="_blank" href="https://www.straitstimes.com/singapore/courts-crime/more-than-300-suspects-under-police-investigation-for-scamming-victims-of-6m">
+														<!-- Feature -->
+															<section class="box feature">
+																<div class="image featured"><img src="{% static 'images/straitstimes.jpg' %}" ></div>
+																<h3>More than 300 suspects under police investigation for scamming victims of $6m</h3>
+																
+															</section>
+														</a>
+													</div>
+
+											<div class="col-3 col-6-medium col-12-small">
+												<a  target="_blank" href="https://www.todayonline.com/singapore/3-teens-8-charged-dbs-phishing-scam-1932801">
+													<!-- Feature -->
+														<section class="box feature">
+															<div class="image featured"><img src="{% static 'images/today.jpg' %}" ></div>
+															<h3>3 teens among 8 charged with involvement in DBS phishing scam</h3>
+															
+														</section>
+													</a>
+												</div>
+
+												<div class="col-3 col-6-medium col-12-small">
+													<a  target="_blank" href="https://www.straitstimes.com/singapore/courts-crime/more-than-71000-lost-to-new-scam-variants-in-first-half-of-june">
+														<!-- Feature -->
+															<section class="box feature">
+																<div class="image featured"><img src="{% static 'images/straitstimes.jpg' %}" ></div>
+																<h3>More than $71,000 lost to new scam variants in first half of June</h3>
+																
+															</section>
+														</a>
+													</div>
+										</div>
+												<div hidden class="row" id="shownews" style="display: none;">			
+													{% for x,y in mylist %}
+													<div class="col-3 col-6-medium col-12-small" >
+														<a  target="_blank" href="{{y}}">
+															<!-- Feature -->
+																<section class="box feature">
+																	<div class="image featured"><img src="{% static 'images/straitstimes.jpg' %}" ></div>
+																	<h3>{{x}}</h3>
+																	
+																</section>
+															</a>
+														</div>
+												  {% endfor %}
+												</div>
+					
+											<div class="col-12">
+												<ul class="actions">
+													<li><a href="#" onclick="myFunction()" id="myBtn" class="button large">view all NEWS</a></li>
+												
+												</ul>
+											</div>
+										
+									
+								</section>
+						
+							</div>
+						</div>
+					</div>
+				</section>
+	
+				
+				{% include 'antiScam/element/footer.html' %}
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function myFunction() {
+				  
+				  var shownews = document.getElementById("shownews");
+				  var btnText = document.getElementById("myBtn");
+				
+				  if (shownews.style.display === "none") {
+					shownews.style.display = "";
+				  } else {
+					
+					moreNews.style.display = "none";
+				  }
+				}
+				</script>
+
+	</body>
+</html>

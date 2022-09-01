@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+{%load static%}
+<!--
+	TXT by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+		
+	</head>
+	<body class="is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				
+
+			<!-- Nav -->
+			{% include 'antiScam/element/nav.html' %}
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-9 col-12-medium">
+								<div class="content">
+
+									<!-- Content -->
+
+										<article class="box page-content" style="border-bottom: 2px solid #6b7770 ;">
+											<section>
+												
+												<h3>CALL FROM "BANK" TURNED OUT TO BE A FAKE</h3>
+												<p>
+													The call came to my daughter from ICBC China Bank, from their Chinatown branch.
+													The person was able to address my daughter by her name and informed her that
+													her I/C was used to issue a credit card which was sent to an address in Bukit Timah.
+													There was a payment of almost $10,000 due tomorrow. She started to panic and at that
+													point, she was transferred to a 'police officer'. At that point, she came to me And
+													gave me the phone and i spoke to that 'officer'. Initially, there were no red flags
+													and the policeman I spoke to spoke English with a Singaporean accent and sounded
+													genuine. He asked me to come down to the cantonment branch to make a report and
+													when i asked if i can make a report in my neighbourhood police post, he agreed.
+													After the call, when i spoke to my daughter, i realised it was a +65 number and
+													so could be a spam call. I called the bank and asked them to check if a
+													credit card was issued since we had the card number and they said no. I also
+													called the spoofed number and the person who picked up said he was not from the bank.
+													Please be careful as this seems to be a new type of scam and the people speaking don't speak with obvious
+													accents, so it sounded like a very genuine call. 
+												</p>
+												
+												<p> NAME: ICBC Bank Contact: 6582227182 Anonymous | 06 Jun 2022</p>
+											</section>
+										</article>
+										{% for s in stories %}
+										<article class="box page-content" style="border-bottom: 2px solid #6b7770 ;">
+											<section>
+												
+												<h3>{{s.scamTitle}}</h3>
+												<p>
+													{{s.scamDetail}}
+												</p>
+												
+												<p> NAME: {{s.nameOfScamer }} Contact:  {{s.contentOfScamer }} Anonymous | {{s.timestamp }} </p>
+											</section>
+										</article>
+										{% endfor %}
+
+								</div>
+							</div>
+							<div class="col-3 col-12-medium">
+								<div class="sidebar">
+
+									<!-- Sidebar -->
+									<a href="/addStory" class="button">share your story</a>
+									
+									<section style="padding-top: 20px; margin-bottom: 30px;">
+										<h2 class="major"><span>sort by</span></h2>
+									
+										<ul class="divided">
+											<li style="margin: 0; padding:0">
+												<article class="box post-summary">
+													<h4><a href="#">Latest</a></h4>
+											
+												</article>
+											</li>
+											<li style="margin: 0; padding:0">
+												<article class="box post-summary">
+													<h4><a href="#">oldest</a></h4>
+												
+												</article>
+											</li>
+										</ul>
+										  
+									</section>
+
+									<section>
+										<h2 class="major"><span>BLACK LIST NUMBER</span></h2>
+										<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for numbers.." title="Type in a name">
+									
+										<ul id="myUL">
+											{% for s in stories %}
+											<li style="list-style: none"><a href="#" style="text-decoration: none; color: grey;">{{s.contentOfScamer }} </a></li>
+										{% endfor %}
+										
+											<li style="list-style: none"><a href="#" style="text-decoration: none; color: grey;">11111111</a></li>
+										  
+											<li style="list-style: none"><a href="#" style="text-decoration: none; color: grey;">22222222</a></li>
+											
+										  </ul>
+										
+										  
+									</section>
+								
+
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</section>
+
+				{% include 'antiScam/element/footer.html' %}
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function myFunction() {
+					var input, filter, ul, li, a, i, txtValue;
+					input = document.getElementById("myInput");
+					filter = input.value.toUpperCase();
+					ul = document.getElementById("myUL");
+					li = ul.getElementsByTagName("li");
+					for (i = 0; i < li.length; i++) {
+						a = li[i].getElementsByTagName("a")[0];
+						txtValue = a.textContent || a.innerText;
+						if (txtValue.toUpperCase().indexOf(filter) > -1) {
+							li[i].style.display = "";
+						} else {
+							li[i].style.display = "none";
+						}
+					}
+				}
+				</script>
+
+	</body>
+</html>
